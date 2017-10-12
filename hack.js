@@ -13,6 +13,7 @@ element.style['box-shadow'] = "0px 0px 20px #311b92"
 element.innerHTML = "破解"
 
 element.onclick = function () {
+    console.log("success")
 	window.MoocPlayer.prototype.pauseMovie = function() {
 		this.player.pauseMovie();
 		document.moocPlayer = this;
