@@ -15,7 +15,7 @@ element.innerHTML = "破解"
 element.onclick = function () {
     console.log("success")
 	window.MoocPlayer.prototype.pauseMovie = function() {
-		this.player.pauseMovie();
+		this.player.playMovie();
 		document.moocPlayer = this;
         console.log("成功")
 		return this;
