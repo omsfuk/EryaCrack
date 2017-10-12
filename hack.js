@@ -17,7 +17,8 @@ element.onclick = function () {
 	window.MoocPlayer.prototype.pauseMovie = function() {
 		this.player.playMovie();
 		document.moocPlayer = this;
-        console.log("成功")
+        console.log("转换pauseMovie为playMovie")
+        console.log(this.player)
 		return this;
 	};
 }
