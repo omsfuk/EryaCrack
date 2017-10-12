@@ -16,6 +16,7 @@ element.onclick = function () {
 	window.MoocPlayer.prototype.pauseMovie = function() {
 		this.player.pauseMovie();
 		document.moocPlayer = this;
+        console.log("成功")
 		return this;
 	};
 }
