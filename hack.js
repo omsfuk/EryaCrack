@@ -34,6 +34,7 @@ playBtn.onclick = function () {
 document.getElementsByTagName("body")[0].appendChild(playBtn)
 
 
+var pauseBtn = document.createElement("div")
 pauseBtn.id = "pauseBtn"
 pauseBtn.style.height = "50px";
 pauseBtn.style.width = "50px";
