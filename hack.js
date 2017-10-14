@@ -1,26 +1,34 @@
-var element = document.createElement("div")
-element.id = "crackBtn"
-element.style.height = "50px";
-element.style.width = "50px";
-element.style['border-radius'] = "25px";
-element.style['background-color'] = "#d1c4e9";
-element.style['line-height'] = "50px";
-element.style['text-align'] = "center"
-element.style['position'] = "fixed"
-element.style['left'] = "100px"
-element.style['top'] = "100px"
-element.style['box-shadow'] = "0px 0px 20px #311b92"
-element.innerHTML = "破解"
+// 污染MoocPlayer原型
+window.MoocPlayer.prototype.pauseMovie = function() {
+    this.player.playMovie();
+    document.moocPlayer = this;
+    console.log("转换pauseMovie为playMovie")
+    return this;
+};
 
-element.onclick = function () {
-    console.log("success")
-	window.MoocPlayer.prototype.pauseMovie = function() {
-		this.player.playMovie();
-		document.moocPlayer = this;
-        console.log("转换pauseMovie为playMovie")
-        console.log(this.player)
-		return this;
-	};
+
+// 重定向pauseMovie事件
+var playBtn = document.createElement("div")
+playBtn.id = "crackBtn"
+playBtn.style.height = "50px";
+playBtn.style.width = "50px";
+playBtn.style['border-radius'] = "25px";
+playBtn.style['background-color'] = "#d1c4e9";
+playBtn.style['line-height'] = "50px";
+playBtn.style['text-align'] = "center"
+playBtn.style['position'] = "fixed"
+playBtn.style['left'] = "100px"
+playBtn.style['top'] = "100px"
+playBtn.style['box-shadow'] = "0px 0px 20px #311b92"
+playBtn.innerHTML = "破解"
+
+
+playBtn.onclick = function () {
+    if (document.moocPlayer != undefined) {
+        document.moocPlayer.playMovie();
+    } else {
+        alert("破解失败！请刷新页面后重新点击此按钮")
+    }
 }
 
-document.getElementsByTagName("body")[0].appendChild(element)
+document.getElementsByTagName("body")[0].appendChild(playBtn)
