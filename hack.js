@@ -24,7 +24,7 @@ playBtn.style['background-color'] = "#d1c4e9";
 playBtn.style['line-height'] = "50px";
 playBtn.style['text-align'] = "center"
 playBtn.style['position'] = "fixed"
-playBtn.style['left'] = "-200x"
+playBtn.style['left'] = "-200px"
 playBtn.style['top'] = "100px"
 playBtn.style['box-shadow'] = "0px 0px 20px #311b92"
 playBtn.innerHTML = "Play!"
@@ -64,4 +64,4 @@ pauseBtn.onclick = function () {
     }
 }
 
-document.getElementsByTagName("body")[0].appendChild(playBtn)
+document.getElementsByTagName("body")[0].appendChild(pauseBtn)
