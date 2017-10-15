@@ -1,5 +1,4 @@
 // 污染MoocPlayer原型
-console.log(window);
 
 (function hackit() {
     if (window.MoocPlayer == undefined) {
@@ -9,11 +8,10 @@ console.log(window);
     window.MoocPlayer.prototype.pauseMovie = function() {
         this.player.playMovie();
         document.moocPlayer = this;
-        console.log("转换pauseMovie为playMovie")
         return this;
     };
 })();
-
+/**
 // 重定向pauseMovie事件
 var playBtn = document.createElement("div")
 playBtn.id = "playBtn"
@@ -65,3 +63,4 @@ pauseBtn.onclick = function () {
 }
 
 document.getElementsByTagName("body")[0].appendChild(pauseBtn)
+*/
